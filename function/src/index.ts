@@ -1,12 +1,7 @@
-import { http, cloudEvent } from "@google-cloud/functions-framework";
-import { apiFunction, onReciveEvent } from "./functions";
+import { http } from '@google-cloud/functions-framework';
+import webserver from '@infrastructure/webserver';
 
 /**
  * Api Function HTTP
  */
-http("apiSolution", apiFunction);
-
-/**
- * Event Function for export Files
- */
-cloudEvent("exportSolution", onReciveEvent);
+http('apiSolution', webserver);

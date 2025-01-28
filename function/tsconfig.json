@@ -4,7 +4,18 @@
     "module": "commonjs",
     "esModuleInterop": true,
     "strict": true,
-    "outDir": "dist"
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "resolveJsonModule": true,
+    "outDir": "dist",
+    "baseUrl": "./src", // Define a base para os caminhos relativos
+    "typeRoots": ["./node_modules/@types", "./src/@types"],
+    "paths": {
+      "@domain/*": ["domain/*"],
+      "@application/*": ["application/*"],
+      "@infrastructure/*": ["infrastructure/*"],
+      "@interfaces/*": ["interfaces/*"]
+    }
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules"]
